@@ -7,7 +7,7 @@ function App() {
   const [getMessage, setGetMessage] = useState({})
 
   useEffect(()=>{
-    axios.get('http://wikiworm.heroku.app.comm/').then(response => {
+    axios.get('http://wikiworm.herokuapp.comm/').then(response => {
       console.log("SUCCESS", response)
       setGetMessage(response)
     }).catch(error => {
