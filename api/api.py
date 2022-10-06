@@ -50,9 +50,21 @@ def hello_world():
     getUser = "SELECT * FROM users"
     cur.execute(getUser)
     results = cur.fetchone()
-    jsonResp = {'hello': 'world', 'results': results}
+    jsonResp = {'hello': 'test', 'results': results}
     return jsonify(jsonResp)
     #return jsonResp
+
+@app.route('/login')
+
+def login():
+  connection = connect_db()
+  cur = connection.cursor()
+  getUser = "SELECT * FROM users"
+  cur.execute(getUser)
+  results = cur.fetchone()
+  jsonResp = {'hello': 'test', 'results': results}
+  return jsonify(jsonResp)
+ 
 
 if __name__ == '__main__':
     app.run(debug=False)
