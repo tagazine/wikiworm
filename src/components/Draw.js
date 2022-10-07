@@ -1,12 +1,10 @@
-export default function Draw(){
+const { createCanvas, loadImage } = require("canvas");
+const canvas = createCanvas(200, 200);
+const ctx = canvas.getContext("2d");
 
-    return(
-        <>
-        
-            <div style = {{minHeight: 800, marginTop: 20 }}>
-                <h1>Draw</h1>
-            </div>
-            
-        </>
-    )
+// Write "Awesome!"
+export default function Draw() {
+  ctx.font = "30px Impact";
+  ctx.rotate(0.1);
+  ctx.fillText("Awesome!", 50, 100);
 }

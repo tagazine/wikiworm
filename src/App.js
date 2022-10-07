@@ -13,7 +13,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+          
           <Routes>
+            
             <Route path="/" element={<Navigation />}>
               <Route index element={<Home />} />
               <Route path="login" element={<Login />} />
@@ -29,7 +31,9 @@ class App extends Component {
               </Route>
               <Route path="*" element={<Error />} />
             </Route>
+            
           </Routes>
+          
         </div>
       </BrowserRouter>
     );

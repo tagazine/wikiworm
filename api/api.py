@@ -1,11 +1,11 @@
 from flask import Flask, jsonify
 
 from flask_cors import cross_origin
-import pymysql
+import pymysql 
 import json
 import os
 from dotenv import load_dotenv
-import logging
+
 
 
 
@@ -42,29 +42,17 @@ def get_cursor(connection):
 
 app = Flask(__name__)
 
-@app.route('/')
-@cross_origin()
-def hello_world():
+@app.route('/login', methods =['GET', 'POST'])
+def login():
     connection = connect_db()
     cur = connection.cursor()
     getUser = "SELECT * FROM users"
     cur.execute(getUser)
     results = cur.fetchone()
-    jsonResp = {'hello': 'test', 'results': results}
-    return jsonify(jsonResp)
-    #return jsonResp
+    jsonResp = jsonify(results)
+    
+      
 
-@app.route('/login')
-
-def login():
-  connection = connect_db()
-  cur = connection.cursor()
-  getUser = "SELECT * FROM users"
-  cur.execute(getUser)
-  results = cur.fetchone()
-  jsonResp = {'hello': 'test', 'results': results}
-  return jsonify(jsonResp)
- 
 
 if __name__ == '__main__':
     app.run(debug=False)

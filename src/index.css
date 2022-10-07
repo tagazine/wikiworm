@@ -79,7 +79,7 @@ body {
 }
 .navtop {
   background-color: whitesmoke;
-  height: 60px;
+  height: 20px;
   width: 100%;
   border: 0;
 }
@@ -102,16 +102,16 @@ body {
   font-weight: normal;
 }
 .navtop div a {
-  padding: 0 20px;
+  padding: 20px 20px;
   text-decoration: none;
   color: #c1c4c8;
   font-weight: bold;
 }
-.navtop div a i {
+.navtop div a {
   padding: 2px 8px 0 0;
 }
 .navtop div a:hover {
-  color: #eaebed;
+  color: red;
 }
 body.loggedin {
   background-color: #f3f4f7;
